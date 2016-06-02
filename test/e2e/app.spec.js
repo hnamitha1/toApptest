@@ -1,6 +1,6 @@
 describe('Todos tracker', function() {
   it('has several ToDos', function() {
-    browser().get('/');
+    browser.get('/');
     var todos = $$('#todos p');
     expect(todos.first().getText()).toEqual('ToDo1: completed');
     expect(todos.last().getText()).toEqual('ToDo2: not completed');
@@ -20,6 +20,7 @@ describe('Todos tracker', function() {
     var todos = $$('#todos p');
 
     $('#remove-todo').click();
+
     expect(todos.count()).toEqual(1);
   });
 });
